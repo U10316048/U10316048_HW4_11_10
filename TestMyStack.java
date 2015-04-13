@@ -1,5 +1,5 @@
 /*U10316048 劉信佑*/
-import java.util.*;
+import java.util.*;//import java.util
 
 public class TestMyStack{
 	public static void main(String[] args){
@@ -9,76 +9,39 @@ public class TestMyStack{
 			System.out.print("Please input a string: ");
 			String s = input.next();
 			ob.push(s);
-		}//for loop to input five strings to ArrayList
+		}//for loop to input five strings to Arraysuper
 		while(!ob.isEmpty()){
 			System.out.print(ob.pop()+" ");
-		}//print out all strings which stored in ArrayList
-	}
+		}//print out all strings which stored in Arraysuper
+	}//Main method
 }
 
-class NewMyStack extends MyStack{
-  private ArrayList<Object> list = new ArrayList<Object>();
-
-  @Override
+class NewMyStack extends ArrayList<Object>{
+  //Extends ArrayList and modify it
   public boolean isEmpty() {
-    return list.isEmpty();
-  }
-
-  @Override
-  public int getSize() {
-    return list.size();
-  }
-
-  @Override
-  public Object peek() {
-    return list.get(getSize() - 1);
-  }
-
-  @Override
-  public Object pop() {
-    Object o = list.get(getSize() - 1);
-    list.remove(getSize() - 1);
-    return o;
-  }
-
-  @Override
-  public void push(Object o) {
-    list.add(o);
-  }
-
-  @Override /** Override the toString in the Object class */
-  public String toString() {
-    return "stack: " + list.toString();
-  }
-}//the class extends MtStack class and override its method
-
-class MyStack {
-  private ArrayList<Object> list = new ArrayList<Object>();
-
-  public boolean isEmpty() {
-    return list.isEmpty();
+    return super.isEmpty();
   }
 
   public int getSize() {
-    return list.size();
+    return super.size();
   }
 
   public Object peek() {
-    return list.get(getSize() - 1);
+    return super.get(getSize() - 1);
   }
 
   public Object pop() {
-    Object o = list.get(getSize() - 1);
-    list.remove(getSize() - 1);
+    Object o = super.get(getSize() - 1);
+    super.remove(getSize() - 1);
     return o;
-  }
+  }//sort the string 's method
 
   public void push(Object o) {
-    list.add(o);
-  }
+    super.add(o);
+  }//add string to arraylist 's method
 
   @Override /** Override the toString in the Object class */
   public String toString() {
-    return "stack: " + list.toString();
+    return "stack: " + super.toString();
   }
 }
