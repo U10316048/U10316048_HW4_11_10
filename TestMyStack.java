@@ -36,9 +36,10 @@ class NewMyStack extends ArrayList<Object>{
     return o;
   }//sort the string 's method
 
-  public void push(Object o) {
-    super.add(o);
+  public Object push(Object o) {
+    return super.add(o);
   }//add string to arraylist 's method
+
 
   @Override /** Override the toString in the Object class */
   public String toString() {
